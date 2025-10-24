@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bill Splitter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Bill Splitter</h1>
+
+    <!-- GROUP SECTION -->
+    <section id="group-section" class="card">
+      <h2>Groups</h2>
+      <div class="input-row">
+        <input type="text" id="group-name" placeholder="Group Name" />
+        <input type="text" id="group-desc" placeholder="Description" />
+        <button class="btn green" onclick="createGroup()">Create Group</button>
+      </div>
+      <ul id="group-list" class="list"></ul>
+    </section>
+
+    <!-- FRIENDS SECTION -->
+    <section id="member-section" class="card">
+      <h2>Group: <span id="current-group-name">Select a group</span></h2>
+      <h3>Add Friend</h3>
+      <div class="input-row">
+        <input type="text" id="member-name" placeholder="Friend Name" />
+        <button class="btn green" onclick="addMember()">Add Friend</button>
+      </div>
+
+      <h3>Friends in Group:</h3>
+      <ul id="member-list" class="list"></ul>
+    </section>
+
+    <!-- EXPENSE SECTION -->
+    <section id="expense-section" class="card">
+      <h2>Add Expense</h2>
+      <div class="input-row">
+        <input type="text" id="expense-desc" placeholder="Description" />
+        <input type="number" id="expense-amount" placeholder="Amount" />
+        <select id="payer-select"></select>
+        <button class="btn green" onclick="addExpense()">Add Expense</button>
+      </div>
+
+      <h3>Expenses:</h3>
+      <ul id="expense-list" class="list"></ul>
+    </section>
+
+    <!-- BALANCE SECTION -->
+    <section id="balance-section" class="card lightgreen">
+      <h2>Total Bill: <span id="total-bill">₹0</span></h2>
+      <h3>Balance (positive = gets money, negative = owes):</h3>
+      <ul id="balance-list" class="list"></ul>
+      <button class="btn green" onclick="showSettlements()">Show Who Owes Whom</button>
+      <ul id="settlement-list" class="list"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
